@@ -35,11 +35,21 @@ function paintShows() {
 
     let htmlCode = '';
 
+
     for (let i = 0; i < shows.length; i++) {
+        const imgDefault = `https://via.placeholder.com/210x295/ffffff/666666/?text=TV`;
+
         htmlCode += `<div class="shows__item js-shows-item" id="${i}">`;
         htmlCode += `<h2 class="shows__name">${shows[i].show.name}</h2>`;
-        htmlCode += `<img class="shows__photo" src="${shows[i].show.image}" />`;
-        htmlCode += `Géneros: ${shows[i].show.genders}<br>`;
+
+        if (shows[i].show.image === null) {
+            htmlCode += `<img class="shows__photo" src="${imgDefault}" />`
+        } else {
+            const img = shows[i].show.image.medium;
+            htmlCode += `<img class="shows__photo" src="${img}" />`;
+        }
+
+        htmlCode += `Géneros: ${shows[i].show.genres}<br>`;
         htmlCode += `Fecha: ${shows[i].show.premiered}`;
         htmlCode += `</div>`;
     }
