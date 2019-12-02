@@ -1,8 +1,60 @@
-@import 'core/settings';
-@import 'core/links';
+.page {
+    padding: 100px;
+    background-color: rgb(243, 229, 252);
+    color: rgb(245, 183, 173);
+    justify-content: center;
+    align-items: center;
 
-body {
-	background: url('../images/logo-adalab-80px.png') center center no-repeat $color-white;
-	margin: 0;
-	height: 100vh;
+    &__shows {
+    display: flex;
+    flex-direction: row;
+    }
 }
+
+.input {
+    border-style: none;
+    background-color: rgb(133, 179, 169);
+    color: cornflowerblue;
+
+    &__btn {
+    border-style: none;
+    background: none;
+    color:  rgb(133, 179, 169);
+    }
+}
+
+.shows__item { 
+    background: crimson;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2%;
+
+    &__photo {
+    width: 100px;
+    }
+
+    &__name {
+    font-style: normal;
+    }
+}
+
+
+.shows__item--favorite {
+    background: mediumspringgreen;
+}
+
+
+.shows__item--favorite  {
+    border-color: red;
+  }
+  
+  .shows__item--favorite .shows__name {
+    font-style: italic;
+  }
+  
+  .shows__item--hidden {
+    display: none;
+  }
