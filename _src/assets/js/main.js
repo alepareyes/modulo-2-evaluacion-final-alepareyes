@@ -13,6 +13,36 @@ const btn = document.querySelector('.js-btn');
 
 
 
+
+
+
+
+
+function setLocalStorage() {
+    localStorage.setItem("favoritesShows", JSON.stringify(favoritesShows));
+}
+
+function getLocalStorage() {
+    const localStorageFavoritesShowsJSON = localStorage.getItem(
+        "favoritesShows"
+    );
+    const localStorageFavoritesShows = JSON.parse(
+        localStorageFavoritesShowsJSON
+    );
+    if (localStorageFavoritesShows !== null) {
+        favoritesShows = localStorageFavoritesShows;
+        paintFavShows();
+        listenShows();
+    }
+}
+
+
+
+
+
+
+
+
 function getServerData() {
 
     const search = document.querySelector('.js-input').value;
@@ -106,6 +136,7 @@ function addToFavorites(ev) {
     }
     console.log(index)
     console.log(favoritesShows);
+    setLocalStorage();
     paintFavShows();
 }
 
@@ -118,11 +149,7 @@ function listenShows() {
 }
 
 
-function forSearch(ev) {
-    ev.preventDefault();
-    getServerData();
-}
 
-
-btn.addEventListener('click', forSearch);
+getLocalStorage();
+btn.addEventListener('click', getServerData);
 
