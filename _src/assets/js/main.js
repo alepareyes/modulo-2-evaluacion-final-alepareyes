@@ -62,25 +62,24 @@ function paintShows() {
 
 
 function paintFavShows() {
-
     let htmlCode = '';
 
     for (let i = 0; i < favoritesShows.length; i++) {
 
         const imgDefault = `https://via.placeholder.com/210x295/ffffff/666666/?text=TV`;
 
-        htmlCode += `<div class="shows__item js-shows-item" id="${favoritesShows[i].show.id}">`;
-        htmlCode += `<h2 class="shows__name">${favoritesShows[i].show.name}</h2>`;
+        htmlCode += `<div class="shows__item--favorite shows__name" id="${favoritesShows[i].id}">`;
+        htmlCode += `<h2 class="shows__name">${favoritesShows[i].name}</h2>`;
 
-        if (favoritesShows[i].show.image === null) {
+        if (favoritesShows[i].image === null) {
             htmlCode += `<img class="shows__photo" src="${imgDefault}" />`
         } else {
-            const img = favoritesShows[i].show.image.medium;
+            const img = favoritesShows[i].image.medium;
             htmlCode += `<img class="shows__photo" src="${img}" />`;
         }
 
-        htmlCode += `Género: ${favoritesShows[i].show.genres}<br>`;
-        htmlCode += `Fecha: ${favoritesShows[i].show.premiered}`;
+        htmlCode += `Género: ${favoritesShows[i].genres}<br>`;
+        htmlCode += `Fecha: ${favoritesShows[i].premiered}`;
         htmlCode += `</div>`;
     }
     favShowsContainer.innerHTML = htmlCode;
@@ -89,17 +88,24 @@ function paintFavShows() {
 
 
 function addToFavorites(ev) {
-
     const clickedId = parseInt(ev.currentTarget.id);
+    const index = favoritesShows.findIndex(function (show, index) {
+        return show.id === clickedId;
+    });
 
-    for (let i = 0; i < shows.length; i++) {
-        if (clickedId === shows[i].show.id) {
-            favoritesShows.push(shows[i]);
-        } else {
+    const isFavorite = index !== -1;
+
+    if (isFavorite === true) {
+        favoritesShows.splice(index, 1);
+    } else {
+        for (let i = 0; i < shows.length; i++) {
+            if (shows[i].show.id === clickedId) {
+                favoritesShows.push(shows[i].show);
+            }
         }
     }
-    console.log(clickedId, favoritesShows);
-
+    console.log(index)
+    console.log(favoritesShows);
     paintFavShows();
 }
 
