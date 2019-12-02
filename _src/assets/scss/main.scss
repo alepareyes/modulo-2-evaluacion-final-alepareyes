@@ -5,20 +5,26 @@
     justify-content: center;
     align-items: center;
 
+    &__favs {
+        text-align: right;
+    }
     &__shows {
     display: flex;
     flex-direction: row;
     }
 
     &__title {
-        
+    font-family: 'Amatic SC', cursive;
+    color: darkslategray;
+    margin-bottom: 5px;
     }
 }
 
 .input {
     border-style: none;
     background-color: rgb(133, 179, 169);
-    color: cornflowerblue;
+    color: black;
+    margin-bottom: 20px;
 
     &__btn {
     border-style: none;
@@ -38,6 +44,7 @@
     align-items: center;
     border-radius: 2%;
     width: 250px;
+    padding: 5px;
     }
     &__photo {
         margin-bottom: 10px; 
@@ -53,15 +60,10 @@
     background: mediumspringgreen;
 }
 
-
-.shows__item--favorite  {
-    border-color: red;
-  }
-  
-  .shows__item--favorite .shows__name {
+.shows__item--favorite .shows__name {
     font-style: italic;
-  }
+}
   
-  .shows__item--hidden {
+.shows__item--hidden {
     display: none;
-  }
+}
