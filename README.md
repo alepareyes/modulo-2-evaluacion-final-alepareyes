@@ -3,7 +3,7 @@ des/marcar las series como favoritas y guardarlas en local storage.
 El ejercicio también tiene una parte de maquetación con HTML y Sass.
 
 
-### FASES
+# FASES
 
 - [x] Estructura básica
 
@@ -13,7 +13,7 @@ El ejercicio también tiene una parte de maquetación con HTML y Sass.
 
 - [x] LocalStorages
 
-# BONUS
+### BONUS
 
 - [x] Borrar favoritos
 
