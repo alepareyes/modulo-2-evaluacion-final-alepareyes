@@ -7,22 +7,27 @@
   <title>Evaluación final Alejandra Reyes</title>
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Patrick+Hand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/main.css" />
+  <script src="https://kit.fontawesome.com/61294e7035.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="page">
-  <h1 class="page__title">Buscador de series</h1>
-  <input type="text" class="input js-input" id="name" />
-  <button class="input__btn js-btn" type="submit">Buscar</button>
-
-  <div class="page__shows">
-
-    <div class="js-shows-container show-list"></div>
-
-  </div>
-
-  <h2 class="page__favs ">Series Favs</h2>
-  <div class="js-favshows-container fav-list"> </div>
-  <script src="./assets/js/main.js"></script>
+  <header class="header">
+    <h1 class="page__title">Buscador de series</h1>
+    <input type="text" class="input js-input" id="name" placeholder="Fleabag" />
+    <button class="input__btn js-btn" type="submit">Buscar</button>
+  </header>
+  <section class="shows__list">
+    <div class="page__shows">
+      <div class="js-shows-container show-list"></div>
+    </div>
+    <div class="favsection">
+      <h2 class="page__favs">Mis series favoritas <button class="reset">RESET</button>
+      </h2>
+      <div class="js-favshows-container fav-list"> </div>
+      <script src="./assets/js/main.js""></script>
+      </div>
+  </section>
 </body>
 
 </html>
