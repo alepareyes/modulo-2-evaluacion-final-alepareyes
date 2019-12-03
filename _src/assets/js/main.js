@@ -100,7 +100,7 @@ function paintShows() {
 
         const imgDefault = `https://via.placeholder.com/210x295/ffffff/666666/?text=TV`;
 
-        if (isFavorite === true) {
+        if (isFavorite) {
             htmlCode += `<div class="shows__item--favorite" id="${shows[i].show.id}">`;
         } else {
             htmlCode += `<div class="shows__item js-shows-item " id="${shows[i].show.id}">`;
